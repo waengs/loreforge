@@ -50,13 +50,13 @@ export function buildPrompt(
   const charBlocks = characters
     .map(
       (c) => `### ${c.name}${c.race ? ` (${c.race})` : c.role ? ` (${c.role})` : ''}${c.age ? `, age ${c.age}` : ''}
-- Personality: ${c.personality || '—'}
-- Likes: ${c.likes || '—'}
-- Dislikes: ${c.dislikes || '—'}
-- Goal: ${c.goal || '—'}
-- Flaw: ${c.flaw || '—'}
-- Secret: ${c.secret || '—'}
-- Appearance: ${c.appearance || '—'}`
+- Personality: ${c.personality || ','}
+- Likes: ${c.likes || ','}
+- Dislikes: ${c.dislikes || ','}
+- Goal: ${c.goal || ','}
+- Flaw: ${c.flaw || ','}
+- Secret: ${c.secret || ','}
+- Appearance: ${c.appearance || ','}`
     )
     .join('\n\n');
 
@@ -82,20 +82,20 @@ export function buildPrompt(
 
   const instructions = continuation
     ? `- Continue the story below seamlessly from where it left off.
-- Write the next 500–800 words only — do not repeat what is already written.
+- Write the next 500–800 words only, do not repeat what is already written.
 - Match the voice, tense, and POV of the existing prose.
 - Honor every world rule; do not break established dynamics without earning it.
 - End on a beat that could lead to the next scene.
-- Do not include meta-commentary, titles, or author notes — only new story prose.`
+- Do not include meta-commentary, titles, or author notes, only new story prose.`
     : `- Write a single scene of 500–800 words.
-- Show, don't tell — use action, dialogue, and sensory detail.
+- Show, don't tell, use action, dialogue, and sensory detail.
 - Stay in third-person limited or close third; pick one POV character from the cast.
 - Honor every world rule; do not break established dynamics without earning it.
 - End on a beat that could lead to the next scene.
-- Do not include meta-commentary, titles, or author notes — only the story prose.`;
+- Do not include meta-commentary, titles, or author notes, only the story prose.`;
 
   const existingBlock = continuation
-    ? `\n## STORY SO FAR (continue from here — do not rewrite)\n${continuation}\n`
+    ? `\n## STORY SO FAR (continue from here, do not rewrite)\n${continuation}\n`
     : '';
 
   return `You are a skilled fiction writer. Write an original fanfiction scene using ONLY the lore below.
@@ -150,7 +150,7 @@ export async function testOllamaConnection() {
       hasModel,
       message:
         models.length === 0
-          ? 'Connected (no models pulled yet — run: ollama pull llama3)'
+          ? 'Connected (no models pulled yet, run: ollama pull llama3)'
           : hasModel
             ? `Connected · ${models.length} model(s)`
             : `Connected, but "${model}" not found. Available: ${models.slice(0, 3).join(', ')}`,

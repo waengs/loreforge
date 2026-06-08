@@ -215,7 +215,7 @@ export default function StoryDetailModal({
                 <TagListInput
                   tags={tags}
                   onChange={setTags}
-                  hint="Optional — add any that fit"
+                  hint="Optional, add any that fit"
                 />
               ) : (
                 <>

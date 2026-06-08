@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Constants from 'expo-constants';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Menu, Switch, Text } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -327,7 +328,7 @@ export default function SettingsScreen() {
         <View style={styles.about}>
           <LoreForgeLogo size={64} />
           <Text style={styles.aboutTitle}>LoreForge</Text>
-          <Text style={styles.aboutVer}>v1.0.0</Text>
+          <Text style={styles.aboutVer}>v{Constants.expoConfig?.version ?? '1.0.1'}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -1,6 +1,6 @@
 # LoreForge
 
-Private fanfiction and worldbuilding studio for mobile. Build characters, relationships, plot seeds, and world rules — then write stories yourself or generate scenes with a **local [Ollama](https://ollama.com)** instance.
+Private fanfiction and worldbuilding studio for mobile. Build characters, relationships, plot seeds, and world rules, then write stories yourself or generate scenes with a **local [Ollama](https://ollama.com)** instance.
 
 ## Stack
 
@@ -33,7 +33,7 @@ Copy `.env.example` to `.env` if you want default Ollama host/model values for d
    ```
 
 3. In LoreForge → **Settings** (gear on Home):
-   - Tap **Test connection** — you should see a green connected state.
+   - Tap **Test connection**, you should see a green connected state.
    - Choose your model (e.g. `llama3`).
    - **Physical phone**: use your PC’s Wi‑Fi IP (Settings can suggest one from Expo).
    - **Android emulator**: use `10.0.2.2`.
@@ -41,7 +41,7 @@ Copy `.env.example` to `.env` if you want default Ollama host/model values for d
 
 4. **Windows firewall**: allow inbound TCP **11434** on private networks if the phone cannot connect.
 
-5. Verify on PC: open `http://localhost:11434` — you should see “Ollama is running”.
+5. Verify on PC: open `http://localhost:11434`, you should see “Ollama is running”.
 
 ## App screens
 
@@ -50,7 +50,7 @@ Copy `.env.example` to `.env` if you want default Ollama host/model values for d
 | **Home** | Greeting, quick actions, latest story |
 | **Characters** | Character grid, portraits, relationships graph |
 | **World** | World rules and plot seeds (two tabs) |
-| **Library** | Past stories — write manually or open story details |
+| **Library** | Past stories, write manually or open story details |
 | **GENERATE +** (FAB) | New AI generation flow (title, cast, plot, tags, rules) |
 | **Generate** (hidden tab) | Same generator screen, opened from FAB or Library |
 | **Settings** (hidden tab) | Ollama URL/model, auto-save, world export |
@@ -88,17 +88,13 @@ loreforge/
 
 | File | Used for |
 |------|----------|
-| `LoreForge_logo.png` | In-app logo |
-| `icon.png` | App icon |
-| `favicon.png` | Web favicon |
-| `android-icon-foreground.png` | Android adaptive icon |
-| `android-icon-background.png` | Android adaptive icon background |
-| `android-icon-monochrome.png` | Android monochrome icon |
+| `LoreForge_logo.png` | In-app logo, splash screen, web favicon |
+| `logo_revised.png` | APK / home screen icon only |
 
 ### Generated at runtime (do not commit)
 
-- `node_modules/` — run `npm install` after clone
-- `.expo/` — local Expo cache
+- `node_modules/`, run `npm install` after clone
+- `.expo/`, local Expo cache
 
 ## Scripts
 
@@ -108,6 +104,24 @@ loreforge/
 | `npm run android` | Open on Android |
 | `npm run ios` | Open on iOS |
 | `npm run web` | Open in browser |
+
+## Android APK (EAS Build)
+
+One-time setup:
+
+```bash
+npm install -g eas-cli
+eas login
+eas build:configure
+```
+
+Build a sideloadable APK:
+
+```bash
+eas build -p android --profile preview
+```
+
+When the build finishes, open the link in the terminal (or Expo dashboard) on your phone to download and install the APK. Point **Settings → Ollama URL** at your PC’s Wi‑Fi IP (`http://192.168.x.x:11434`).
 
 ## Design reference
 

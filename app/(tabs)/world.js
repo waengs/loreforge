@@ -155,7 +155,7 @@ export default function WorldScreen() {
 
             {filteredRules.length === 0 ? (
               <Text style={styles.empty}>
-                No rules yet — add lore that shapes your world.
+                No rules yet, add lore that shapes your world.
               </Text>
             ) : (
               filteredRules.map((rule) => (
@@ -178,7 +178,7 @@ export default function WorldScreen() {
 
             {plotSeeds.length === 0 ? (
               <Text style={styles.empty}>
-                No plot seeds yet — plant a story idea to grow later.
+                No plot seeds yet, plant a story idea to grow later.
               </Text>
             ) : (
               plotSeeds.map((plot) => (

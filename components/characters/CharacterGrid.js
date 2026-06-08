@@ -14,7 +14,7 @@ export default function CharacterGrid({ characters, onPressCharacter }) {
   if (!characters.length) {
     return (
       <Text style={styles.empty}>
-        No characters yet — import from another world or add a new one.
+        No characters yet, import from another world or add a new one.
       </Text>
     );
   }

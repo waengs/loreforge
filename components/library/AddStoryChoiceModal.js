@@ -35,7 +35,7 @@ export default function AddStoryChoiceModal({ visible, onDismiss, onAi, onManual
           <ChoiceCard
             icon="pencil-outline"
             title="Write Yourself"
-            subtitle="No AI tokens — write the story by hand"
+            subtitle="No AI tokens, write the story by hand"
             onPress={onManual}
           />
 

@@ -236,7 +236,7 @@ export default function GenerateScreen() {
           >
             <MaterialCommunityIcons name="lan-disconnect" size={20} color={colors.gold} />
             <Text style={styles.connText}>
-              Ollama not connected — tap to open Settings
+              Ollama not connected, tap to open Settings
             </Text>
           </TouchableOpacity>
         ) : null}
@@ -249,7 +249,7 @@ export default function GenerateScreen() {
               color={colors.gold}
             />
             <Text style={styles.continueBannerText}>
-              Continuing your story — AI will pick up where you left off
+              Continuing your story, AI will pick up where you left off
             </Text>
           </View>
         ) : null}
@@ -332,7 +332,7 @@ export default function GenerateScreen() {
           <TagListInput
             tags={storyTags}
             onChange={setStoryTags}
-            hint="Optional — add any that fit"
+            hint="Optional, add any that fit"
           />
         </View>
 

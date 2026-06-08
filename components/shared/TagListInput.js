@@ -6,7 +6,7 @@ import { colors, fonts, radius, spacing } from '../../constants/theme';
 
 export default function TagListInput({
   label = 'GENRE / TAGS',
-  hint = 'Add 0 or more — optional',
+  hint = 'Add 0 or more, optional',
   tags,
   onChange,
   placeholder = 'e.g. fantasy',

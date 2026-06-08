@@ -79,7 +79,7 @@ export default function HomeScreen() {
 
         {!featured ? (
           <Text style={styles.empty}>
-            No stories yet — tap GENERATE + to write your first scene.
+            No stories yet, tap GENERATE + to write your first scene.
           </Text>
         ) : (
           <>

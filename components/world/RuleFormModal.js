@@ -150,7 +150,7 @@ export default function RuleFormModal({
             </ScrollView>
           ) : charMode ? (
             <Text style={styles.hint}>
-              No characters yet — this will save as a world rule.
+              No characters yet, this will save as a world rule.
             </Text>
           ) : null}
 

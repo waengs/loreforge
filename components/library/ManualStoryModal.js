@@ -116,7 +116,7 @@ export default function ManualStoryModal({
         <View style={styles.header}>
           <View style={styles.headerText}>
             <Text style={styles.title}>Write Story</Text>
-            <Text style={styles.subtitle}>No AI — your words only</Text>
+            <Text style={styles.subtitle}>No AI, your words only</Text>
           </View>
           <TouchableOpacity onPress={onDismiss}>
             <MaterialCommunityIcons name="close" size={24} color={colors.text} />

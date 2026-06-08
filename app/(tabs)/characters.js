@@ -149,7 +149,7 @@ export default function CharactersScreen() {
   const name = (id) => getCharacterById(id)?.name || '?';
 
   return (
-    <ScreenLayout title="Characters" showLogo showSettings>
+    <ScreenLayout showSettings>
       <SectionTitle icon="account-group" title="Characters" />
       <CharacterActionRow
         onImport={() => setImportOpen(true)}

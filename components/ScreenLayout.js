@@ -1,15 +1,13 @@
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import LoreHeader from './LoreHeader';
+import HomeHeader from './home/HomeHeader';
 import WorldSwitcher from './WorldSwitcher';
 import { colors, spacing } from '../constants/theme';
 
 export default function ScreenLayout({
-  title,
-  showLogo,
-  showSettings,
+  showSettings = true,
   showWorldSwitcher = true,
-  headerRight,
+  showHeader = true,
   children,
   scroll = true,
   noPadding,
@@ -32,14 +30,7 @@ export default function ScreenLayout({
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
-      {title !== false ? (
-        <LoreHeader
-          title={title}
-          showLogo={showLogo}
-          showSettings={showSettings}
-          right={headerRight}
-        />
-      ) : null}
+      {showHeader ? <HomeHeader showSettings={showSettings} /> : null}
       {showWorldSwitcher ? <WorldSwitcher /> : null}
       {body}
     </SafeAreaView>

@@ -113,7 +113,7 @@ export default function LibraryScreen() {
 
         {storyHistory.length === 0 ? (
           <Text style={styles.empty}>
-            No stories yet — tap add story to write one or generate with AI.
+            No stories yet, tap add story to write one or generate with AI.
           </Text>
         ) : (
           storyHistory.map((story) => (
