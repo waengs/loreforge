@@ -2,8 +2,6 @@
 
 Private fanfiction and worldbuilding studio for mobile. Build characters, relationships, plot seeds, and world rules — then write stories yourself or generate scenes with a **local [Ollama](https://ollama.com)** instance.
 
-This folder (`mobile/`) is the **complete app**. It does not depend on any files outside this directory.
-
 ## Stack
 
 - **Expo SDK 56** + **React Native**
@@ -15,7 +13,6 @@ This folder (`mobile/`) is the **complete app**. It does not depend on any files
 ## Quick start
 
 ```bash
-cd mobile
 npm install --legacy-peer-deps
 npm start
 ```
@@ -23,7 +20,7 @@ npm start
 - Scan the QR code with **Expo Go** on your phone, or
 - Press `a` for Android emulator / `i` for iOS simulator / `w` for web
 
-> If you moved or renamed this folder, run commands from wherever `package.json` and `app.json` live.
+Copy `.env.example` to `.env` if you want default Ollama host/model values for device testing.
 
 ## Ollama setup
 
@@ -68,10 +65,8 @@ Data stays on the device (AsyncStorage). No accounts or cloud sync.
 
 ## Project layout
 
-Everything the app needs lives under `mobile/`:
-
 ```
-mobile/
+loreforge/
 ├── app/                    # Expo Router screens
 │   ├── _layout.js          # Root layout (Paper, fonts, stack)
 │   ├── index.js            # Splash / hydration gate
@@ -100,31 +95,10 @@ mobile/
 | `android-icon-background.png` | Android adaptive icon background |
 | `android-icon-monochrome.png` | Android monochrome icon |
 
-### Generated at runtime (do not commit; recreated by Expo)
+### Generated at runtime (do not commit)
 
 - `node_modules/` — run `npm install` after clone
 - `.expo/` — local Expo cache
-
-## Can I delete everything outside `mobile/`?
-
-**Yes.** The runnable app is fully self-contained in `mobile/`.
-
-The parent folder (`LoreForge Mobile App Design/`) is a **Figma Make export** that also included a separate **web prototype** (Vite + React in `src/`). That web app is **not** used by the mobile app. No file under `mobile/` imports from the parent directory.
-
-Safe to delete outside `mobile/` (if you only want the mobile app):
-
-| Path (parent folder) | What it is |
-|----------------------|------------|
-| `src/` | Figma web prototype (Vite/React) — unused by mobile |
-| `index.html`, `vite.config.ts` | Web prototype build |
-| `package.json`, `pnpm-workspace.yaml` | Web prototype dependencies |
-| `node_modules/` (at parent root) | Web prototype deps — not mobile’s |
-| `README.md`, `ATTRIBUTIONS.md` (parent) | Figma export docs |
-| `.expo/` (at parent root, if present) | Stray cache if Expo was run from wrong folder |
-
-**Keep:** the entire `mobile/` folder (including `mobile/node_modules/` after install).
-
-After cleanup, treat `mobile/` as your project root (open it in your editor, run `npm start` from there).
 
 ## Scripts
 
