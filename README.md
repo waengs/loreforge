@@ -122,7 +122,3 @@ eas build -p android --profile preview
 ```
 
 When the build finishes, open the link in the terminal (or Expo dashboard) on your phone to download and install the APK. Point **Settings → Ollama URL** at your PC's Wi‑Fi IP (`http://192.168.x.x:11434`).
-
-## Design reference
-
-Original Figma design: [CreateInk Mobile App Design](https://www.figma.com/design/PLnhI6ZhKq7UKm8OIWwVuw/LoreForge-Mobile-App-Design)
